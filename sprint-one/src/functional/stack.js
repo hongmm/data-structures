@@ -3,17 +3,6 @@ var Stack = function() {
 
   // Use an object with numeric keys to store values
   var storage = {};
-  // array = [1,2,3]
-  // array[0] = 1
-  // ...
-
-  // storage = {
-  //   0: "1",
-  //   1: "2",
-  //   2: "3",
-  // }
-
-  // array[0] === storage[1]
 
   // Implement the methods below
   someInstance.push = function(value) {
