@@ -41,4 +41,12 @@ describe('tree', function() {
     expect(tree.contains(8)).to.equal(true);
   });
 
+  it('should not add a child if the value already exists within the tree', function() {
+    tree.addChild(5);
+    tree.addChild(5);
+    expect(tree.children.length).to.equal(1);
+    tree.children[0].addChild(5);
+    tree.children[0].addChild(6);
+    expect(tree.children[0].children.length).to.equal(1);
+  });
 });

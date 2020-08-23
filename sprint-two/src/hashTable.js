@@ -16,7 +16,7 @@ HashTable.prototype.insert = function(k, v) {
       return prevValue;
     }
   }
-  bucket.push([k,v]);
+  bucket.push([k, v]);
   this._storage.set(index, bucket);
 };
 
@@ -39,13 +39,11 @@ HashTable.prototype.remove = function(k) {
   for (var i = 0; i < bucket.length; i++) {
     var tuple = bucket[i];
     if (tuple[0] === k) {
-      bucket.splice(i,1);
+      bucket.splice(i, 1);
       this._storage.set(index, bucket);
     }
   }
 };
-
-
 
 /*
  * Complexity: What is the time complexity of the above functions?

@@ -52,4 +52,12 @@ describe('linkedList', function() {
   });
 
   // add more tests here to test the functionality of linkedList
+  it('should reset head and tail to null if all nodes were removed', function() {
+    linkedList.addToTail(1);
+    linkedList.addToTail(2);
+    linkedList.removeHead();
+    linkedList.removeHead();
+    expect(linkedList.head).to.be.null;
+    expect(linkedList.tail).to.be.null;
+  });
 });

@@ -12,13 +12,15 @@ var treeMethods = {};
 
 treeMethods.addChild = function(value) {
   // takes any value, sets that as the target of a node, and adds that node as a child of the tree
+  if (this.contains(value)) {
+    return;
+  }
   var childNode = Tree(value);
   this.children.push(childNode);
 };
 
 treeMethods.contains = function(target) {
   // takes any input and returns a boolean reflecting whether it can be found as the value of the target node or any descendant node
-  // this = the root/very bottom node
   if (this.value && this.value === target) {
     return true;
   }
@@ -33,8 +35,6 @@ treeMethods.contains = function(target) {
 
   return false;
 };
-
-
 
 /*
  * Complexity: What is the time complexity of the above functions?

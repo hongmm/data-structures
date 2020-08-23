@@ -23,6 +23,12 @@ var LinkedList = function() {
     this.head = this.storage[nextInLine];
 
     delete this.storage[headToRemove.value];
+
+    if (!this.head) {
+      this.head = null;
+      this.tail = null;
+    }
+
     return headToRemove.value;
   };
 

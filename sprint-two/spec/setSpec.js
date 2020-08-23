@@ -24,4 +24,10 @@ describe('set', function() {
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
 
+  it('should not add a duplicate value into the set', function() {
+    set.add('Tom Hanks');
+    set.add('Tom Hanks');
+
+    expect(Object.keys(set).length).to.equal(1);
+  });
 });
